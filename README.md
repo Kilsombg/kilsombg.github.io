@@ -4,10 +4,10 @@
 
 ---
 
-<img align="right" width="600" height="270" src="docs/assets/ConqCTF_preview.png">
-
 ### ConqCTF
 .NET | Angular | SQL Server
+
+<img align="right" width="600" height="270" src="docs/assets/ConqCTF_preview.png">
 
 #### description:
 - Capture The Flag Platform. Begin your journey in cybersecurity by solving cool challenges and practice your skills. This project is designed for beginners in cybersecurity.
@@ -25,10 +25,13 @@
 
 <br>
 
-<img align="left" width="600" height="270" src="docs/assets/RootDefence_preview.png">
-
 ### RootDefence
 C++ | SD2
+
+<img align="left" width="600" height="270" src="docs/assets/RootDefence_preview.png">
+
+#### Genre:
+RTS | Tower Defense
 
 #### description:
 -  Root Defence — a simple Tower Defense game built using C++ and SDL2. Build trees to defend your base from incoming vegetables.
@@ -42,10 +45,10 @@ C++ | SD2
 
 <br>
 
-<img align="right" width="600" height="270" src="docs/assets/Kilsotopia_previewe.png">
-
 ### Kilsotopia
 .NET | Angular | SQL Server
+
+<img align="right" width="600" height="270" src="docs/assets/Kilsotopia_previewe.png">
 
 #### description:
 -  Kilsotopia is a single page project to preview my projects. It has a Calendar-To-Do project.
