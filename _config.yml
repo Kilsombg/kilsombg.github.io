@@ -2,3 +2,6 @@ theme: jekyll-theme-minimal
 title: Ivan Kamenov
 logo: docs/assets/logo-circle.png
 description: Programmer | Gamer
+
+plugins:
+  - jekyll-feed
