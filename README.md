@@ -5,9 +5,9 @@ I am from Vratsa, Bulgaria and I am currently studying cybersecurity master degr
 
 ### Contact me:
 
-[![Linkedin](https://i.sstatic.net/gVE0j.png) LinkedIn](https://www.linkedin.com/)
+[![Linkedin](https://img.icons8.com/?size=12&id=13930&format=png&color=000000) LinkedIn](https://www.linkedin.com/in/ivan-kamenov-924305172/)
 &nbsp;
-[![GitHub](https://i.sstatic.net/tskMh.png) GitHub](https://github.com/)
+[![GitHub](https://img.icons8.com/?size=12&id=62856&format=png&color=000000) GitHub](https://github.com/kilsombg)
 &nbsp;
 [![Email](https://img.icons8.com/color/12/gmail-new.png) kilsombg@gmail.com](mailto:kilsombg@gmail.com)
 
