@@ -1,6 +1,17 @@
-# Ivan Kamenov Portfolio
+# About me
 
-## Projects
+I am from Vratsa, Bulgaria and I am currently studying cybersecurity master degree at Technical University Sofia. I have some experience with web developing single page applications with .NET and Angular. Now I am focused on creating games. Check my projects below. If you have any questions feel free to contact me.
+
+
+### Contact me:
+
+[![Linkedin](https://i.sstatic.net/gVE0j.png) LinkedIn](https://www.linkedin.com/)
+&nbsp;
+[![GitHub](https://i.sstatic.net/tskMh.png) GitHub](https://github.com/)
+&nbsp;
+[![Email](https://img.icons8.com/color/12/gmail-new.png) kilsombg@gmail.com](mailto:kilsombg@gmail.com)
+
+## My Projects
 
 ---
 
