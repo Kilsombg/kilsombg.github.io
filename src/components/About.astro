@@ -1,0 +1,138 @@
+---
+const currently = [
+	{ where: "LudogorieSoft", what: "Internship, AI-focused work", since: "since Apr 2026" },
+	{ where: "LupyGames", what: "Browser games, Phaser 3 + AI-assisted workflow", since: "since Jul 2026" },
+];
+
+const education = [
+	{ title: "MSc, Cybersecurity & Cybercrime Prevention", org: "Technical University Sofia", when: "2025 – 2026" },
+	{ title: "BSc, Computer & Software Engineering", org: "Technical University Sofia", when: "2021 – 2025" },
+];
+---
+
+<section id="about" class="section about">
+	<div class="container about-grid">
+		<div data-reveal>
+			<p class="eyebrow">About</p>
+			<h2 class="section-heading">From full-stack to full-time games.</h2>
+			<p class="about-text">
+				I'm a programmer based in Vratsa, Bulgaria, moving deliberately into game
+				development. I started out building single-page web apps with .NET and
+				Angular, then taught myself C++ and SDL2 to ship RootDefence, a pixel-art
+				tower defense, entirely solo. I just finished an MSc in Cybersecurity and
+				Cybercrime Prevention at Technical University Sofia — my thesis project,
+				ConqCTF, is a Clean Architecture case study in disguise.
+			</p>
+			<p class="about-text">
+				Right now I split my time between an internship at LudogorieSoft and
+				building browser games at LupyGames, while learning Godot on the side.
+				I'm looking for a Gameplay Programmer role or game dev internship —
+				based in Vratsa, open to relocating to Sofia, and open to remote.
+			</p>
+		</div>
+
+		<div class="about-side" data-reveal>
+			<div class="side-card">
+				<h3 class="side-title">Currently</h3>
+				<ul class="side-list">
+					{
+						currently.map((c) => (
+							<li>
+								<span class="side-list-main">{c.where}</span>
+								<span class="text-dim">{c.what}</span>
+								<span class="side-list-since">{c.since}</span>
+							</li>
+						))
+					}
+				</ul>
+			</div>
+
+			<div class="side-card">
+				<h3 class="side-title">Education</h3>
+				<ul class="side-list">
+					{
+						education.map((e) => (
+							<li>
+								<span class="side-list-main">{e.title}</span>
+								<span class="text-dim">{e.org}</span>
+								<span class="side-list-since">{e.when}</span>
+							</li>
+						))
+					}
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.about-grid {
+		display: grid;
+		grid-template-columns: 1.3fr 1fr;
+		gap: var(--space-5);
+		align-items: start;
+	}
+
+	.about-text {
+		color: var(--text-dim);
+		margin-bottom: var(--space-2);
+		max-width: 62ch;
+	}
+
+	.about-side {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-3);
+	}
+
+	.side-card {
+		background: var(--bg-elevated);
+		border: 1px solid var(--border);
+		border-radius: var(--radius-md);
+		padding: var(--space-3);
+	}
+
+	.side-title {
+		font-size: 0.95rem;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		color: var(--accent);
+		margin-bottom: var(--space-2);
+	}
+
+	.side-list {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-2);
+	}
+
+	.side-list li {
+		display: flex;
+		flex-direction: column;
+		font-size: 0.92rem;
+		padding-bottom: var(--space-2);
+		border-bottom: 1px solid var(--border);
+	}
+
+	.side-list li:last-child {
+		border-bottom: none;
+		padding-bottom: 0;
+	}
+
+	.side-list-main {
+		font-weight: 600;
+	}
+
+	.side-list-since {
+		color: var(--text-faint);
+		font-family: var(--font-mono);
+		font-size: 0.78rem;
+		margin-top: 0.2em;
+	}
+
+	@media (max-width: 860px) {
+		.about-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

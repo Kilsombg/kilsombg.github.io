@@ -1,0 +1,299 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const experience = [
+	{
+		role: "Game Programmer — Browser Games",
+		org: "LupyGames",
+		when: "Jul 2026 – Present",
+		bullets: [
+			"Build and ship browser games (Phaser 3, vanilla JS/HTML/CSS) using an AI-assisted rapid-prototyping workflow.",
+			"Shipped a 5-game portal spanning puzzle, match-3, idle-clicker, and word-search genres, deployed to Vercel for review.",
+		],
+	},
+	{
+		role: "Software Engineering Intern",
+		org: "LudogorieSoft",
+		when: "Apr 2026 – Present",
+		bullets: ["Working on AI-focused projects and tooling as part of an ongoing internship."],
+	},
+	{
+		role: "Software Developer (Trainee)",
+		org: "Kabile Tech",
+		when: "Jul – Sep 2022 & Jul – Sep 2023",
+		bullets: [
+			"Designed, coded, tested, and debugged features in C#/.NET codebases under senior guidance, including one project using Angular on the frontend.",
+			"Followed software engineering standards for code quality, testing, and review.",
+		],
+	},
+];
+
+const projects = [
+	{ name: "RootDefence", detail: "Solo C++/SDL2 pixel-art tower defense, shipped to itch.io.", href: "/projects/rootdefence" },
+	{ name: "LupyGames Portal", detail: "5 browser games built with Phaser 3 and vanilla JS.", href: "/projects/lupygames" },
+	{ name: "ConqCTF", detail: "Cybersecurity CTF platform — .NET, Angular, Clean Architecture.", href: "/projects/conqctf" },
+	{ name: "Kilsotopia", detail: "Personal project hub with a calendar-to-do app — .NET, Angular.", href: "/projects/kilsotopia" },
+];
+
+const education = [
+	{ title: "MSc, Cybersecurity & Cybercrime Prevention", org: "Technical University Sofia", when: "2025 – 2026" },
+	{ title: "BSc, Computer & Software Engineering", org: "Technical University Sofia", when: "2021 – 2025" },
+];
+
+const skillGroups = [
+	{ title: "Languages", items: "C#, C++, JavaScript, SQL" },
+	{ title: "Game Dev", items: "Phaser 3, SDL2, Godot (learning), Pixel Art" },
+	{ title: "Web & Backend", items: ".NET, Angular, Entity Framework, REST APIs, SQL Server, MySQL, SQLite, Supabase" },
+	{ title: "Practices", items: "Clean Architecture, SOLID, MVC/MVVM, Dependency Injection, xUnit, Git" },
+];
+---
+
+<BaseLayout
+	title="Resume — Ivan Kamenov"
+	description="Resume of Ivan Kamenov: Gameplay Programmer, Vratsa Bulgaria, MSc Cybersecurity, .NET/Angular background."
+>
+	<section class="section resume">
+		<div class="container resume-inner">
+			<div class="resume-toolbar no-print">
+				<a class="back-link" href="/">← Back home</a>
+				<button class="btn btn-primary" id="print-btn">Download / Print PDF</button>
+			</div>
+
+			<header class="resume-header">
+				<h1>Ivan Kamenov</h1>
+				<p class="resume-role">Gameplay Programmer</p>
+				<p class="resume-contact">
+					Vratsa, Bulgaria · open to Sofia / Remote &nbsp;·&nbsp;
+					<a href="mailto:kilsombg@gmail.com">kilsombg@gmail.com</a> &nbsp;·&nbsp;
+					<a href="https://github.com/Kilsombg" target="_blank" rel="noopener noreferrer">github.com/Kilsombg</a>
+					&nbsp;·&nbsp;
+					<a href="https://www.linkedin.com/in/ivan-kamenov-924305172/" target="_blank" rel="noopener noreferrer"
+						>LinkedIn</a
+					>
+					&nbsp;·&nbsp;
+					<a href="https://kilsom.itch.io/" target="_blank" rel="noopener noreferrer">itch.io</a>
+				</p>
+			</header>
+
+			<p class="resume-summary">
+				Programmer moving into game development, with C++/SDL2 and Phaser 3 shipping
+				experience and a .NET/Angular full-stack background. Recently completed an
+				MSc in Cybersecurity and Cybercrime Prevention. Built a solo pixel-art tower
+				defense from scratch and currently building browser games professionally.
+				Looking for a Gameplay Programmer role or game development internship.
+			</p>
+
+			<section class="resume-section">
+				<h2>Experience</h2>
+				{
+					experience.map((job) => (
+						<div class="resume-item">
+							<div class="resume-item-head">
+								<span class="resume-item-title">{job.role} · {job.org}</span>
+								<span class="resume-item-when">{job.when}</span>
+							</div>
+							<ul>
+								{job.bullets.map((b) => (
+									<li>{b}</li>
+								))}
+							</ul>
+						</div>
+					))
+				}
+			</section>
+
+			<section class="resume-section">
+				<h2>Projects</h2>
+				<div class="resume-projects">
+					{
+						projects.map((p) => (
+							<div class="resume-project">
+								<a href={p.href} class="resume-project-name">
+									{p.name}
+								</a>
+								<span class="text-dim">{p.detail}</span>
+							</div>
+						))
+					}
+				</div>
+			</section>
+
+			<section class="resume-section">
+				<h2>Education</h2>
+				{
+					education.map((e) => (
+						<div class="resume-item">
+							<div class="resume-item-head">
+								<span class="resume-item-title">{e.title}</span>
+								<span class="resume-item-when">{e.when}</span>
+							</div>
+							<span class="text-dim">{e.org}</span>
+						</div>
+					))
+				}
+			</section>
+
+			<section class="resume-section">
+				<h2>Skills</h2>
+				<div class="resume-skills">
+					{
+						skillGroups.map((g) => (
+							<div class="resume-skill-row">
+								<span class="resume-skill-label">{g.title}</span>
+								<span class="text-dim">{g.items}</span>
+							</div>
+						))
+					}
+				</div>
+			</section>
+
+			<section class="resume-section">
+				<h2>Languages</h2>
+				<p class="text-dim">Bulgarian (native) · English (good — reading, writing, verbal)</p>
+			</section>
+		</div>
+	</section>
+</BaseLayout>
+
+<style>
+	.resume-inner {
+		max-width: 780px;
+	}
+
+	.resume-toolbar {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: var(--space-3);
+	}
+
+	.back-link {
+		color: var(--text-dim);
+		font-size: 0.9rem;
+	}
+
+	.back-link:hover {
+		color: var(--accent);
+	}
+
+	.resume-header {
+		border-bottom: 1px solid var(--border);
+		padding-bottom: var(--space-3);
+		margin-bottom: var(--space-3);
+	}
+
+	.resume-header h1 {
+		font-size: 2rem;
+	}
+
+	.resume-role {
+		color: var(--accent);
+		font-weight: 600;
+		margin-top: 0.2em;
+	}
+
+	.resume-contact {
+		color: var(--text-dim);
+		font-size: 0.9rem;
+		margin-top: var(--space-2);
+	}
+
+	.resume-contact a:hover {
+		color: var(--accent);
+	}
+
+	.resume-summary {
+		color: var(--text-dim);
+		max-width: 65ch;
+		margin-bottom: var(--space-4);
+	}
+
+	.resume-section {
+		margin-bottom: var(--space-4);
+	}
+
+	.resume-section h2 {
+		font-size: 1.15rem;
+		color: var(--accent);
+		margin-bottom: var(--space-2);
+	}
+
+	.resume-item {
+		margin-bottom: var(--space-2);
+	}
+
+	.resume-item-head {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+
+	.resume-item-title {
+		font-weight: 600;
+	}
+
+	.resume-item-when {
+		font-family: var(--font-mono);
+		font-size: 0.8rem;
+		color: var(--text-faint);
+	}
+
+	.resume-item ul {
+		margin-top: 0.4rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.3rem;
+		color: var(--text-dim);
+	}
+
+	.resume-item li {
+		position: relative;
+		padding-left: 1.2em;
+	}
+
+	.resume-item li::before {
+		content: "▸";
+		position: absolute;
+		left: 0;
+		color: var(--accent);
+	}
+
+	.resume-projects,
+	.resume-skills {
+		display: flex;
+		flex-direction: column;
+		gap: 0.6rem;
+	}
+
+	.resume-project {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		align-items: baseline;
+	}
+
+	.resume-project-name {
+		font-weight: 600;
+		color: var(--text);
+	}
+
+	.resume-project-name:hover {
+		color: var(--accent);
+	}
+
+	.resume-skill-row {
+		display: flex;
+		gap: 0.75rem;
+		flex-wrap: wrap;
+	}
+
+	.resume-skill-label {
+		font-weight: 600;
+		min-width: 110px;
+	}
+</style>
+
+<script>
+	document.getElementById("print-btn")?.addEventListener("click", () => window.print());
+</script>

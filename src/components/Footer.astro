@@ -1,0 +1,46 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+	<div class="container footer-inner">
+		<p class="text-dim">© {year} Ivan Kamenov. Built with Astro, deployed on GitHub Pages.</p>
+		<div class="footer-links">
+			<a href="https://github.com/Kilsombg" target="_blank" rel="noopener noreferrer">GitHub</a>
+			<a href="https://www.linkedin.com/in/ivan-kamenov-924305172/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+			<a href="https://kilsom.itch.io/" target="_blank" rel="noopener noreferrer">itch.io</a>
+			<a href="mailto:kilsombg@gmail.com">kilsombg@gmail.com</a>
+		</div>
+	</div>
+</footer>
+
+<style>
+	.footer {
+		border-top: 1px solid var(--border);
+		padding-block: var(--space-4);
+	}
+
+	.footer-inner {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-2);
+		align-items: center;
+		justify-content: space-between;
+		font-size: 0.9rem;
+	}
+
+	.footer-links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-3);
+	}
+
+	.footer-links a {
+		color: var(--text-dim);
+		transition: color 0.15s ease;
+	}
+
+	.footer-links a:hover {
+		color: var(--accent);
+	}
+</style>

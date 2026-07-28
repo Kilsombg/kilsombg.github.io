@@ -1,0 +1,91 @@
+---
+---
+
+<section class="hero">
+	<div class="hero-grid" aria-hidden="true"></div>
+	<div class="hero-glow" aria-hidden="true"></div>
+
+	<div class="container hero-inner">
+		<p class="eyebrow">Gameplay Programmer · Vratsa, Bulgaria</p>
+		<h1 class="hero-title">Ivan Kamenov builds games,<br /> line by line.</h1>
+		<p class="hero-lead">
+			Programmer moving into game development — C++/SDL2 and Phaser 3 in production,
+			a .NET/Angular background, and an MSc in Cybersecurity behind me. Open to
+			Sofia-based or remote gameplay programming roles.
+		</p>
+		<div class="hero-actions">
+			<a class="btn btn-primary" href="#projects">View Projects</a>
+			<a class="btn btn-ghost" href="/resume">See Resume</a>
+		</div>
+	</div>
+</section>
+
+<style>
+	.hero {
+		position: relative;
+		overflow: hidden;
+		padding-block: var(--space-6) var(--space-5);
+	}
+
+	.hero-inner {
+		position: relative;
+		z-index: 1;
+		max-width: 780px;
+	}
+
+	.hero-title {
+		font-size: clamp(2.2rem, 5.5vw, 3.6rem);
+		margin-block: 0.4em 0.5em;
+	}
+
+	.hero-lead {
+		color: var(--text-dim);
+		font-size: 1.05rem;
+		max-width: 60ch;
+		margin-bottom: var(--space-3);
+	}
+
+	.hero-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-2);
+		margin-top: var(--space-3);
+	}
+
+	.hero-grid {
+		position: absolute;
+		inset: 0;
+		background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+			linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+		background-size: 48px 48px;
+		mask-image: radial-gradient(ellipse 70% 60% at 30% 0%, black 20%, transparent 75%);
+		-webkit-mask-image: radial-gradient(ellipse 70% 60% at 30% 0%, black 20%, transparent 75%);
+	}
+
+	.hero-glow {
+		position: absolute;
+		top: -120px;
+		right: -80px;
+		width: 480px;
+		height: 480px;
+		background: radial-gradient(circle, var(--accent-soft), transparent 70%);
+		filter: blur(20px);
+		animation: drift 12s ease-in-out infinite;
+	}
+
+	@keyframes drift {
+		0%,
+		100% {
+			transform: translate(0, 0) scale(1);
+		}
+		50% {
+			transform: translate(-24px, 30px) scale(1.08);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.hero-glow {
+			animation: none;
+		}
+	}
+</style>

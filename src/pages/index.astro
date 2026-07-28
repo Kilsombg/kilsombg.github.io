@@ -1,0 +1,37 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
+import Skills from "../components/Skills.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import { projects } from "../data/projects";
+---
+
+<BaseLayout
+	title="Ivan Kamenov — Gameplay Programmer"
+	description="Portfolio of Ivan Kamenov, a programmer moving into game development. C++/SDL2, Phaser 3, and a .NET/Angular background."
+>
+	<Hero />
+	<About />
+	<Skills />
+
+	<section id="projects" class="section projects">
+		<div class="container">
+			<p class="eyebrow" data-reveal>Projects</p>
+			<h2 class="section-heading" data-reveal>Things I've shipped.</h2>
+
+			<div class="projects-grid">
+				{projects.map((project) => <ProjectCard project={project} />)}
+			</div>
+		</div>
+	</section>
+</BaseLayout>
+
+<style>
+	.projects-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+		gap: var(--space-3);
+		margin-top: var(--space-3);
+	}
+</style>
