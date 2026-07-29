@@ -1,72 +1,51 @@
-# About me
+# kilsombg.github.io
 
-I am from Vratsa, Bulgaria and I am currently studying cybersecurity master degree at Technical University Sofia. I have some experience with web developing single page applications with .NET and Angular. Now I am focused on creating games. Check my projects below. If you have any questions feel free to contact me.
+Personal portfolio.
 
+**Live site:** https://kilsombg.github.io
 
-### Contact me:
+## Stack
 
-[![Linkedin](https://img.icons8.com/?size=12&id=13930&format=png&color=000000) LinkedIn](https://www.linkedin.com/in/ivan-kamenov-924305172/)
-&nbsp;
-[![GitHub](https://img.icons8.com/?size=12&id=62856&format=png&color=000000) GitHub](https://github.com/kilsombg)
-&nbsp;
-[![Email](https://img.icons8.com/color/12/gmail-new.png) kilsombg@gmail.com](mailto:kilsombg@gmail.com)
+- [Astro](https://astro.build) — static site, no UI framework, minimal JS
+- Plain CSS with custom properties for theming (see `src/styles/global.css`)
+- Deployed to GitHub Pages via GitHub Actions (`.github/workflows/deploy.yml`)
 
-## My Projects
+## Structure
 
+```
+src/
+  components/   Nav, Hero, About, Skills, ProjectCard, Footer
+  data/         projects.ts — single source of truth for project content
+  layouts/      BaseLayout, ProjectLayout
+  pages/        index.astro, resume.astro, projects/*.astro
+  styles/       global.css — theme tokens, reset, print styles
+public/
+  fonts/        self-hosted Space Grotesk + Inter (latin subset)
+  images/       project preview screenshots
+```
+
+## Development
+
+```bash
+npm install
+npm run dev      # local dev server
+npm run build    # production build to dist/
+npm run preview  # preview the production build
+```
+
+## Adding a project
+
+Add an entry to `src/data/projects.ts` and a thin page under `src/pages/projects/<slug>.astro`:
+
+```astro
+---
+import ProjectLayout from "../../layouts/ProjectLayout.astro";
+import { getProject } from "../../data/projects";
+
+const project = getProject("<slug>")!;
 ---
 
-### ConqCTF
-.NET | Angular | SQL Server
+<ProjectLayout project={project} />
+```
 
-<img align="right" width="600" height="270" src="docs/assets/ConqCTF_preview.png">
-
-#### description:
-- Capture The Flag Platform. Begin your journey in cybersecurity by solving cool challenges and practice your skills. This project is designed for beginners in cybersecurity.
-
-#### architecture:
-- Clean Architecture
-- Modular Component based
-
-
-[View Github](https://github.com/Kilsombg/ConqCTF/)
-
-<br>
-
----
-
-<br>
-
-### RootDefence
-C++ | SD2
-
-<img align="left" width="600" height="270" src="docs/assets/RootDefence_preview.png">
-
-#### Genre:
-RTS | Tower Defense
-
-#### description:
--  Root Defence — a simple Tower Defense game built using C++ and SDL2. Build trees to defend your base from incoming vegetables.
-
-
-[View Github](https://github.com/Kilsombg/RootDefence/)
-
-<br>
-
----
-
-<br>
-
-### Kilsotopia
-.NET | Angular | SQL Server
-
-<img align="right" width="600" height="270" src="docs/assets/Kilsotopia_previewe.png">
-
-#### description:
--  Kilsotopia is a single page project to preview my projects. It has a Calendar-To-Do project.
-
-#### architecture:
-- Clean Architecture
-
-|front-end|back-end|
-|---|---|
-|[web-app](https://github.com/Kilsombg/kilsotopia-web-app/) | [data](https://github.com/Kilsombg/kilsotopia-data/)|
+It'll automatically show up in the home page's project grid.

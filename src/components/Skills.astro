@@ -1,0 +1,75 @@
+---
+const groups = [
+	{
+		title: "Languages",
+		items: ["C#", "C++", "JavaScript", "SQL"],
+	},
+	{
+		title: "Game Dev",
+		items: ["Phaser 3", "SDL2", "Godot", "Pixel Art"],
+	},
+	{
+		title: "Web & Backend",
+		items: [".NET", "Angular", "Entity Framework", "REST APIs", "SQL Server", "SQLite", "Supabase"],
+	},
+	{
+		title: "Practices",
+		items: ["Clean Architecture", "SOLID", "MVC / MVVM", "Dependency Injection", "xUnit", "Git"],
+	},
+];
+---
+
+<section id="skills" class="section skills">
+	<div class="container">
+		<p class="eyebrow" data-reveal>Skills</p>
+		<h2 class="section-heading" data-reveal>What I work with.</h2>
+
+		<div class="skills-grid">
+			{
+				groups.map((group) => (
+					<div class="skills-card" data-reveal>
+						<h3 class="skills-card-title">{group.title}</h3>
+						<div class="skills-tags">
+							{group.items.map((item) => (
+								<span class="tag">{item}</span>
+							))}
+						</div>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</section>
+
+<style>
+	.skills-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		gap: var(--space-3);
+		margin-top: var(--space-3);
+	}
+
+	.skills-card {
+		background: var(--bg-elevated);
+		border: 1px solid var(--border);
+		border-radius: var(--radius-md);
+		padding: var(--space-3);
+		transition: border-color 0.2s ease;
+	}
+
+	.skills-card:hover {
+		border-color: var(--accent-line);
+	}
+
+	.skills-card-title {
+		font-size: 1rem;
+		margin-bottom: var(--space-2);
+		color: var(--accent);
+	}
+
+	.skills-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+</style>

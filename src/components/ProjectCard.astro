@@ -1,0 +1,186 @@
+---
+import type { Project } from "../data/projects";
+
+interface Props {
+	project: Project;
+}
+
+const { project } = Astro.props;
+const primaryLink = project.links[0];
+---
+
+<article class="card" data-reveal>
+	<a class="card-media" href={`/projects/${project.slug}`}>
+		{
+			project.image ? (
+				<img src={project.image} alt={project.imageAlt} loading="lazy" />
+			) : (
+				<div class="card-placeholder">
+					<div class="placeholder-grid">
+						{
+							project.subGames?.map((g) => (
+								<div class="placeholder-tile">
+									<span class="placeholder-tile-title">{g.title}</span>
+									<span class="placeholder-tile-genre">{g.genre}</span>
+								</div>
+							))
+						}
+					</div>
+				</div>
+			)
+		}
+	</a>
+
+	<div class="card-body">
+		<p class="card-status">{project.status}</p>
+		<h3 class="card-title">
+			<a href={`/projects/${project.slug}`}>{project.title}</a>
+		</h3>
+		<p class="card-tagline text-dim">{project.tagline}</p>
+
+		<div class="card-tags">
+			{project.tags.map((tag) => <span class="tag">{tag}</span>)}
+		</div>
+
+		<div class="card-actions">
+			<a class="btn btn-ghost" href={`/projects/${project.slug}`}>View Case Study</a>
+			{primaryLink && (
+				<a class="card-quicklink" href={primaryLink.url} target="_blank" rel="noopener noreferrer">
+					{primaryLink.label} ↗
+				</a>
+			)}
+		</div>
+	</div>
+</article>
+
+<style>
+	.card {
+		background: var(--bg-elevated);
+		border: 1px solid var(--border);
+		border-radius: var(--radius-lg);
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+		transition: border-color 0.2s ease, transform 0.2s ease;
+	}
+
+	.card:hover {
+		border-color: var(--accent-line);
+		transform: translateY(-3px);
+	}
+
+	.card-media {
+		display: block;
+		aspect-ratio: 16 / 9;
+		background: var(--bg-elevated-2);
+		overflow: hidden;
+	}
+
+	.card-media img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.4s ease;
+	}
+
+	.card:hover .card-media img {
+		transform: scale(1.04);
+	}
+
+	.card-placeholder {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: radial-gradient(circle at 30% 20%, var(--accent-soft), transparent 60%), var(--bg-elevated-2);
+		padding: var(--space-2);
+	}
+
+	.placeholder-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 0.5rem;
+		width: 100%;
+	}
+
+	.placeholder-tile {
+		display: flex;
+		flex-direction: column;
+		gap: 0.15rem;
+		border: 1px solid var(--border-strong);
+		border-radius: var(--radius-sm);
+		padding: 0.5rem 0.6rem;
+		background: rgba(255, 255, 255, 0.02);
+	}
+
+	.placeholder-tile-title {
+		font-family: var(--font-heading);
+		font-size: 0.78rem;
+		font-weight: 600;
+	}
+
+	.placeholder-tile-genre {
+		font-size: 0.68rem;
+		color: var(--text-faint);
+	}
+
+	.card-body {
+		padding: var(--space-3);
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		flex: 1;
+	}
+
+	.card-status {
+		font-family: var(--font-mono);
+		font-size: 0.75rem;
+		color: var(--text-faint);
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	.card-title {
+		font-size: 1.3rem;
+	}
+
+	.card-title a:hover {
+		color: var(--accent);
+	}
+
+	.card-tagline {
+		font-size: 0.92rem;
+	}
+
+	.card-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4rem;
+		margin-top: 0.25rem;
+	}
+
+	.card-actions {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: var(--space-2);
+		margin-top: auto;
+		padding-top: var(--space-2);
+	}
+
+	.card-actions .btn {
+		padding: 0.5em 1.1em;
+		font-size: 0.88rem;
+	}
+
+	.card-quicklink {
+		font-size: 0.85rem;
+		color: var(--text-dim);
+		transition: color 0.15s ease;
+	}
+
+	.card-quicklink:hover {
+		color: var(--accent);
+	}
+</style>
