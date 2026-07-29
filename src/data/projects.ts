@@ -29,9 +29,9 @@ export const projects: Project[] = [
 	{
 		slug: "rootdefence",
 		title: "RootDefence",
-		tagline: "A pixel-art tower defense built solo, from first pixel to shipped build.",
+		tagline: "A pixel-art tower defense, from first pixel to shipped build.",
 		status: "Solo project · 2025",
-		tags: ["C++", "SDL2", "SQLite", "Pixel Art"],
+		tags: ["C++", "SDL2", "SQLite"],
 		summary:
 			"Build trees to defend your base from waves of incoming vegetables — a tower defense built from scratch in C++ and SDL2, with hand-drawn pixel art.",
 		image: "/images/rootdefence-preview.png",
@@ -42,11 +42,11 @@ export const projects: Project[] = [
 		],
 		overview:
 			"RootDefence is a tower-defense game built entirely from scratch in C++ using SDL2 for rendering, input, and audio — no game engine underneath. You defend your base from waves of incoming vegetables by placing and upgrading trees along their path. It was built solo over about 5-6 months in 2025, covering the full pipeline from the core game loop to hand-drawn pixel art to a shipped, playable itch.io build.",
-		role: "Solo developer — programming, game design, and pixel art.",
+		role: "Solo developer — programming, game design and pixel art.",
 		highlights: [
-			"Built the full game loop, rendering, and input handling directly on SDL2, with no pre-built engine.",
+			"Built the full game loop, rendering and input handling directly on SDL2, with no pre-built engine.",
 			"Designed and implemented the core tower-defense mechanics: placement, enemy waves, and targeting.",
-			"Hand-drew the pixel art used throughout the game.",
+			"Created the pixel art used throughout the game.",
 			"Used SQLite to persist in-game data.",
 			"Packaged and published a playable build to itch.io.",
 		],
@@ -54,12 +54,12 @@ export const projects: Project[] = [
 	{
 		slug: "lupygames",
 		title: "LupyGames — Browser Games Portal",
-		tagline: "Five browser games shipped in weeks, built with Phaser 3 and an AI-assisted workflow.",
+		tagline: "Browser games shipped in weeks, built with Phaser 3 and an AI-assisted workflow.",
 		status: "Current · since July 2026",
-		tags: ["Phaser 3", "JavaScript", "HTML5 Canvas", "Vercel"],
+		tags: ["Phaser 3", "JavaScript", "HTML5 Canvas"],
 		summary:
 			"A portal of five browser-playable games — four built with Phaser 3, one in vanilla JS — built while rapidly prototyping game ideas with an AI-assisted workflow.",
-		image: null,
+		image: "/images/browser-games-portal-preview.png",
 		imageAlt: "LupyGames browser games portal",
 		links: [
 			{ label: "Play the portal", url: "https://lupygames-browsergames.vercel.app" },
@@ -67,12 +67,12 @@ export const projects: Project[] = [
 			{ label: "Candy Tap on itch.io", url: "https://kilsom.itch.io/candy-tap" },
 		],
 		overview:
-			"At LupyGames, I build a portal of small browser games used to rapidly prototype and validate game ideas, using an AI-assisted development workflow to move from concept to playable build quickly. The portal currently hosts five games spanning puzzle, match-3, and idle-clicker genres. The repository is a private client project, so there's no public source — the portal itself and two of the games are playable directly.",
+			"I build a portal of small browser games used to rapidly prototype and validate game ideas, using an AI-assisted development workflow to move from concept to playable build quickly. The portal currently hosts five games - spanning puzzle, match-3, and idle-clicker genres. The portal itself and two of the games are playable directly. (see links above)",
 		role: "Game programmer — gameplay systems and UI for each title in the portal.",
 		highlights: [
 			"Shipped five playable browser games in a matter of weeks using an AI-assisted, rapid-prototyping workflow.",
 			"Built four titles in Phaser 3 (Chroma Loop, Match3, Harvest Mosaic, Candy Tap) and one in plain HTML/CSS/JS (Word Trail).",
-			"Covered three distinct genres: connect/match puzzles, an idle incremental clicker, and a word search.",
+			"Covered three distinct genres: connect/match puzzles, an idle incremental clicker and a word search.",
 			"Deployed and iterated on a live build via Vercel for stakeholder review.",
 		],
 		subGames: [

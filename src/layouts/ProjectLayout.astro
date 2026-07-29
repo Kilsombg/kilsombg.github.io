@@ -61,7 +61,7 @@ const { project } = Astro.props;
 			<div class="case-body">
 				<div class="case-section">
 					<h2>Overview</h2>
-					<p class="text-dim">{project.overview}</p>
+					<p class="text-dim case-overview">{project.overview}</p>
 				</div>
 
 				<div class="case-section">
@@ -113,6 +113,10 @@ const { project } = Astro.props;
 	.case-tagline {
 		font-size: 1.05rem;
 		max-width: 60ch;
+	}
+
+	.case-overview {
+		text-align: justify;
 	}
 
 	.case-tags {
