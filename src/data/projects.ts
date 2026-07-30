@@ -21,7 +21,7 @@ export interface Project {
 	overview: string;
 	role: string;
 	highlights: string[];
-	/** Only set for the LupyGames portal, rendered as a mini game-select grid instead of a screenshot. */
+	/** Only set for the Arcadex portal, rendered as a mini game-select grid instead of a screenshot. */
 	subGames?: { title: string; genre: string }[];
 }
 
@@ -52,17 +52,17 @@ export const projects: Project[] = [
 		],
 	},
 	{
-		slug: "lupygames",
-		title: "LupyGames — Browser Games Portal",
+		slug: "arcadex",
+		title: "Arcadex — Browser Games Portal",
 		tagline: "Browser games shipped in weeks, built with Phaser 3 and an AI-assisted workflow.",
 		status: "Current · since July 2026",
 		tags: ["Phaser 3", "JavaScript", "HTML5 Canvas"],
 		summary:
 			"A portal of five browser-playable games — four built with Phaser 3, one in vanilla JS — built while rapidly prototyping game ideas with an AI-assisted workflow.",
 		image: "/images/browser-games-portal-preview.png",
-		imageAlt: "LupyGames browser games portal",
+		imageAlt: "Arcadex browser games portal",
 		links: [
-			{ label: "Play the portal", url: "https://lupygames-browsergames.vercel.app" },
+			{ label: "Play the portal", url: "https://arcadex-browsergames.vercel.app/" },
 			{ label: "Chroma Loop on itch.io", url: "https://kilsom.itch.io/chroma-loop" },
 			{ label: "Candy Tap on itch.io", url: "https://kilsom.itch.io/candy-tap" },
 		],
