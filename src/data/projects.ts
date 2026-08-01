@@ -63,11 +63,12 @@ export const projects: Project[] = [
 		imageAlt: "Arcadex browser games portal",
 		links: [
 			{ label: "Play the portal", url: "https://arcadex-browsergames.vercel.app/" },
+			{ label: "Word Trail on itch.io", url: "https://kilsom.itch.io/word-trail" },
 			{ label: "Chroma Loop on itch.io", url: "https://kilsom.itch.io/chroma-loop" },
 			{ label: "Candy Tap on itch.io", url: "https://kilsom.itch.io/candy-tap" },
 		],
 		overview:
-			"I build a portal of small browser games used to rapidly prototype and validate game ideas, using an AI-assisted development workflow to move from concept to playable build quickly. The portal currently hosts five games - spanning puzzle, match-3, and idle-clicker genres. The portal itself and two of the games are playable directly. (see links above)",
+			"I build a portal of small browser games used to rapidly prototype and validate game ideas, using an AI-assisted development workflow to move from concept to playable build quickly. The portal currently hosts five games - spanning puzzle, match-3, and idle-clicker genres. The portal itself and three of the games are playable directly. (see links above)",
 		role: "Game programmer — gameplay systems and UI for each title in the portal.",
 		highlights: [
 			"Shipped five playable browser games in a matter of weeks using an AI-assisted, rapid-prototyping workflow.",
