@@ -21,7 +21,7 @@ export interface Project {
 	overview: string;
 	role: string;
 	highlights: string[];
-	/** Only set for the LupyGames portal, rendered as a mini game-select grid instead of a screenshot. */
+	/** Only set for the Arcadex portal, rendered as a mini game-select grid instead of a screenshot. */
 	subGames?: { title: string; genre: string }[];
 }
 
@@ -52,22 +52,23 @@ export const projects: Project[] = [
 		],
 	},
 	{
-		slug: "lupygames",
-		title: "LupyGames — Browser Games Portal",
+		slug: "arcadex",
+		title: "Arcadex — Browser Games Portal",
 		tagline: "Browser games shipped in weeks, built with Phaser 3 and an AI-assisted workflow.",
 		status: "Current · since July 2026",
 		tags: ["Phaser 3", "JavaScript", "HTML5 Canvas"],
 		summary:
 			"A portal of five browser-playable games — four built with Phaser 3, one in vanilla JS — built while rapidly prototyping game ideas with an AI-assisted workflow.",
 		image: "/images/browser-games-portal-preview.png",
-		imageAlt: "LupyGames browser games portal",
+		imageAlt: "Arcadex browser games portal",
 		links: [
-			{ label: "Play the portal", url: "https://lupygames-browsergames.vercel.app" },
+			{ label: "Play the portal", url: "https://arcadex-browsergames.vercel.app/" },
+			{ label: "Word Trail on itch.io", url: "https://kilsom.itch.io/word-trail" },
 			{ label: "Chroma Loop on itch.io", url: "https://kilsom.itch.io/chroma-loop" },
 			{ label: "Candy Tap on itch.io", url: "https://kilsom.itch.io/candy-tap" },
 		],
 		overview:
-			"I build a portal of small browser games used to rapidly prototype and validate game ideas, using an AI-assisted development workflow to move from concept to playable build quickly. The portal currently hosts five games - spanning puzzle, match-3, and idle-clicker genres. The portal itself and two of the games are playable directly. (see links above)",
+			"I build a portal of small browser games used to rapidly prototype and validate game ideas, using an AI-assisted development workflow to move from concept to playable build quickly. The portal currently hosts five games - spanning puzzle, match-3, and idle-clicker genres. The portal itself and three of the games are playable directly. (see links above)",
 		role: "Game programmer — gameplay systems and UI for each title in the portal.",
 		highlights: [
 			"Shipped five playable browser games in a matter of weeks using an AI-assisted, rapid-prototyping workflow.",
