@@ -7,6 +7,13 @@ export interface ProjectHighlight {
 	text: string;
 }
 
+export interface SubGame {
+	title: string;
+	genre: string;
+	/** Standalone playable build (itch.io), if the game has been published on its own. */
+	url?: string;
+}
+
 export interface Project {
 	slug: string;
 	title: string;
@@ -21,8 +28,8 @@ export interface Project {
 	overview: string;
 	role: string;
 	highlights: string[];
-	/** Only set for the Arcadex portal, rendered as a mini game-select grid instead of a screenshot. */
-	subGames?: { title: string; genre: string }[];
+	/** Only set for the Arcadex portal, rendered as a game-select grid on the case-study page. */
+	subGames?: SubGame[];
 }
 
 export const projects: Project[] = [
@@ -58,30 +65,26 @@ export const projects: Project[] = [
 		status: "Current · since July 2026",
 		tags: ["Phaser 3", "JavaScript", "HTML5 Canvas"],
 		summary:
-			"A portal of five browser-playable games — four built with Phaser 3, one in vanilla JS — built while rapidly prototyping game ideas with an AI-assisted workflow.",
+			"A growing portal of browser-playable games — most built with Phaser 3, others in vanilla JS — built while rapidly prototyping game ideas with an AI-assisted workflow.",
 		image: "/images/browser-games-portal-preview.png",
 		imageAlt: "Arcadex browser games portal",
-		links: [
-			{ label: "Play the portal", url: "https://arcadex-browsergames.vercel.app/" },
-			{ label: "Word Trail on itch.io", url: "https://kilsom.itch.io/word-trail" },
-			{ label: "Chroma Loop on itch.io", url: "https://kilsom.itch.io/chroma-loop" },
-			{ label: "Candy Tap on itch.io", url: "https://kilsom.itch.io/candy-tap" },
-		],
+		links: [{ label: "Play the portal", url: "https://arcadex-browsergames.vercel.app/" }],
 		overview:
-			"I build a portal of small browser games used to rapidly prototype and validate game ideas, using an AI-assisted development workflow to move from concept to playable build quickly. The portal currently hosts five games - spanning puzzle, match-3, and idle-clicker genres. The portal itself and three of the games are playable directly. (see links above)",
+			"I build a portal of small browser games used to rapidly prototype and validate game ideas, using an AI-assisted development workflow to move from concept to playable build quickly. The portal spans puzzle, match-3, word and idle-incremental genres, and keeps growing as new prototypes ship. The portal itself is playable directly, and several titles are also published standalone on itch.io.",
 		role: "Game programmer — gameplay systems and UI for each title in the portal.",
 		highlights: [
-			"Shipped five playable browser games in a matter of weeks using an AI-assisted, rapid-prototyping workflow.",
-			"Built four titles in Phaser 3 (Chroma Loop, Match3, Harvest Mosaic, Candy Tap) and one in plain HTML/CSS/JS (Word Trail).",
-			"Covered three distinct genres: connect/match puzzles, an idle incremental clicker and a word search.",
+			"Ship playable browser games in a matter of weeks each, using an AI-assisted, rapid-prototyping workflow.",
+			"Build most titles in Phaser 3 (Chroma Loop, Match3, Harvest Mosaic, Candy Tap, Ironvein) and others in plain HTML/CSS/JS (Word Trail).",
+			"Cover a range of genres: connect/match puzzles, word search and idle-incremental games with deeper progression systems.",
 			"Deployed and iterated on a live build via Vercel for stakeholder review.",
 		],
 		subGames: [
-			{ title: "Chroma Loop", genre: "Orb-connect puzzle" },
+			{ title: "Chroma Loop", genre: "Orb-connect puzzle", url: "https://kilsom.itch.io/chroma-loop" },
 			{ title: "Match3", genre: "Match-three puzzle" },
 			{ title: "Harvest Mosaic", genre: "Match-three puzzle" },
-			{ title: "Candy Tap", genre: "Idle / incremental" },
-			{ title: "Word Trail", genre: "Word search" },
+			{ title: "Candy Tap", genre: "Idle / incremental", url: "https://kilsom.itch.io/candy-tap" },
+			{ title: "Word Trail", genre: "Word search", url: "https://kilsom.itch.io/word-trail" },
+			{ title: "Ironvein", genre: "Idle / incremental RPG", url: "https://kilsom.itch.io/ironvein" },
 		],
 	},
 	{

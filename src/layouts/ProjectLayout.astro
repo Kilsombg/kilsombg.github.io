@@ -58,6 +58,35 @@ const { project } = Astro.props;
 				}
 			</div>
 
+			{
+				project.subGames && (
+					<section class="case-section games">
+						<h2>Games in the portal</h2>
+						<ul class="games-grid">
+							{project.subGames.map((game) => {
+								const Tile = game.url ? "a" : "div";
+								return (
+									<li>
+										<Tile
+											class:list={["game-tile", { "is-playable": game.url }]}
+											href={game.url}
+											target={game.url ? "_blank" : undefined}
+											rel={game.url ? "noopener noreferrer" : undefined}
+										>
+											<span class="game-title">{game.title}</span>
+											<span class="game-genre">{game.genre}</span>
+											<span class="game-cta">
+												{game.url ? "Play on itch.io ↗" : "In the portal"}
+											</span>
+										</Tile>
+									</li>
+								);
+							})}
+						</ul>
+					</section>
+				)
+			}
+
 			<div class="case-body">
 				<div class="case-section">
 					<h2>Overview</h2>
@@ -190,6 +219,99 @@ const { project } = Astro.props;
 		display: flex;
 		flex-direction: column;
 		gap: var(--space-4);
+	}
+
+	/* ---------- Game-select grid ---------- */
+	.games {
+		margin-bottom: var(--space-4);
+	}
+
+	.games-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+		gap: var(--space-2);
+	}
+
+	.game-tile {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		gap: 0.15rem;
+		height: 100%;
+		padding: 0.9rem 1rem 0.8rem;
+		border: 1px solid var(--border);
+		border-radius: var(--radius-md);
+		background: var(--bg-elevated);
+		overflow: hidden;
+		transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+	}
+
+	/* accent rail that lights up on hover */
+	.game-tile::before {
+		content: "";
+		position: absolute;
+		inset: 0 auto 0 0;
+		width: 2px;
+		background: var(--border-strong);
+		transition: background 0.2s ease, box-shadow 0.2s ease;
+	}
+
+	.game-tile.is-playable::before {
+		background: var(--accent-line);
+	}
+
+	.game-tile.is-playable:hover {
+		border-color: var(--accent-line);
+		background: var(--bg-elevated-2);
+		transform: translateY(-3px);
+	}
+
+	.game-tile.is-playable:hover::before {
+		background: var(--accent);
+		box-shadow: 0 0 10px var(--accent);
+	}
+
+	.game-title {
+		font-family: var(--font-heading);
+		font-weight: 600;
+		font-size: 1rem;
+	}
+
+	.game-tile.is-playable:hover .game-title {
+		color: var(--accent);
+	}
+
+	.game-genre {
+		font-size: 0.8rem;
+		color: var(--text-faint);
+	}
+
+	.game-cta {
+		margin-top: 0.6rem;
+		font-family: var(--font-mono);
+		font-size: 0.72rem;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		color: var(--text-faint);
+		transition: color 0.2s ease;
+	}
+
+	.game-tile.is-playable .game-cta {
+		color: var(--text-dim);
+	}
+
+	.game-tile.is-playable:hover .game-cta {
+		color: var(--accent);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.game-tile,
+		.game-tile::before {
+			transition: none;
+		}
+		.game-tile.is-playable:hover {
+			transform: none;
+		}
 	}
 
 	.case-section h2 {
