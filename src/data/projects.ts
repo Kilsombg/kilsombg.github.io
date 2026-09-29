@@ -70,12 +70,12 @@ export const projects: Project[] = [
 		imageAlt: "Arcadex browser games portal",
 		links: [{ label: "Play the portal", url: "https://arcadex-browsergames.vercel.app/" }],
 		overview:
-			"I build a portal of small browser games used to rapidly prototype and validate game ideas, using an AI-assisted development workflow to move from concept to playable build quickly. The portal spans puzzle, match-3, word and idle-incremental genres, and keeps growing as new prototypes ship. The portal itself is playable directly, and several titles are also published standalone on itch.io.",
+			"I build a portal of small browser games used to rapidly prototype and validate game ideas, using an AI-assisted development workflow to move from concept to playable build quickly. The portal spans puzzle, nonogram, match-3, word and idle-incremental genres, and keeps growing as new prototypes ship. The portal itself is playable directly, and several titles are also published standalone on itch.io.",
 		role: "Game programmer — gameplay systems and UI for each title in the portal.",
 		highlights: [
 			"Ship playable browser games in a matter of weeks each, using an AI-assisted, rapid-prototyping workflow.",
-			"Build most titles in Phaser 3 (Chroma Loop, Match3, Harvest Mosaic, Candy Tap, Ironvein) and others in plain HTML/CSS/JS (Word Trail).",
-			"Cover a range of genres: connect/match puzzles, word search and idle-incremental games with deeper progression systems.",
+			"Build most titles in Phaser 3 (Chroma Loop, Match3, Harvest Mosaic, Candy Tap, Ironvein) and others in plain HTML/CSS/JS (Word Trail, Pixel Loom).",
+			"Cover a range of genres: connect/match and nonogram puzzles, word search and idle-incremental games with deeper progression systems.",
 			"Deployed and iterated on a live build via Vercel for stakeholder review.",
 		],
 		subGames: [
@@ -85,6 +85,7 @@ export const projects: Project[] = [
 			{ title: "Candy Tap", genre: "Idle / incremental", url: "https://kilsom.itch.io/candy-tap" },
 			{ title: "Word Trail", genre: "Word search", url: "https://kilsom.itch.io/word-trail" },
 			{ title: "Ironvein", genre: "Idle / incremental RPG", url: "https://kilsom.itch.io/ironvein" },
+			{ title: "Pixel Loom", genre: "Nonogram puzzle", url: "https://kilsom.itch.io/pixel-loom" },
 		],
 	},
 	{
